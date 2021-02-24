@@ -1,0 +1,21 @@
+---
+name: remote_create_topic
+pack: kafka
+description: Create a topic using the kafka cli on a kafka broker server
+enabled: true
+parameters:
+  topic:
+    description: The topic to create
+    type: string
+    required: true
+  host:
+    description: The kafka broker host with kafka cli installed
+    type: string
+    required: true
+  zookeeper:
+    description: The zookeeper connection string (like "host:port,host:port") for old style consumbers
+    type: string
+    default: ""
+  cmd:
+    default: kafka-topics {% if zookeeper %}--zookeeper {{ zookeeper }}{% endif %} --create --topic '{{ topic }}'
+    immutable: true
