@@ -3,6 +3,8 @@ name: remote_create_topic
 pack: kafka
 description: Create a topic using the kafka cli on a kafka broker server
 enabled: true
+runner_type: remote-shell-cmd
+entry_point: ""
 parameters:
   topic:
     description: The topic to create
@@ -17,5 +19,5 @@ parameters:
     type: string
     default: ""
   cmd:
-    default: kafka-topics {% if zookeeper %}--zookeeper {{ zookeeper }}{% endif %} --create --topic '{{ topic }}'
+    default: "kafka-topics {% if zookeeper %}--zookeeper {{ zookeeper }}{% endif %} --create --topic '{{ topic }}'"
     immutable: true
