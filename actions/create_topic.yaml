@@ -1,0 +1,48 @@
+---
+name: create_topic
+description: Create a topic using the kafka api on a kafka broker server
+enabled: true
+runner_type: python-script
+entry_point: create_topic.py
+
+# doc strings come from the apache licensed confluent-kafka python package
+parameters:
+  topic:
+    description: The topic to create
+    type: string
+    required: true
+  partitions:
+    description: Number of partitions to create
+    type: integer
+    default: 1
+  replication_factor:
+    description: Replication factor of partitions, or -1 if replica_assignment is used.
+    type: integer
+    default: 1
+    required: false
+  replica_assignment:
+    description: mapping from partition id to the assigned replica
+    type: object
+    additionalProperties:
+      type: integer
+  topic_config:
+    description: Dict (str:str) of topic configuration. See http://kafka.apache.org/documentation.html#topicconfigs
+    type: object
+    additionalProperties:
+      type: string
+    required: false
+
+  kafka_broker:
+    description: A kafka broker (server) to talk to
+    type: string
+    required: true
+  kafka_broker_port:
+    description: The port that the kafka broker is listening on
+    type: integer
+    default: 9092
+  client_options:
+    description: Connection options like `security_protocol`, `sasl_mechanism`, `sasl_plain_username`, etc.
+    type: object
+    default: {}
+    additionalProperties:
+      type: string
