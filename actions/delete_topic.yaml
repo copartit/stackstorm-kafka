@@ -1,0 +1,28 @@
+---
+name: delete_topic
+description: Create a topic using the kafka api on a kafka broker server
+enabled: true
+runner_type: python-script
+entry_point: delete_topic.py
+
+# doc strings come from the apache licensed confluent-kafka python package
+parameters:
+  topic:
+    description: The topic to delete
+    type: string
+    required: true
+
+  kafka_broker:
+    description: A kafka broker (server) to talk to
+    type: string
+    required: true
+  kafka_broker_port:
+    description: The port that the kafka broker is listening on
+    type: integer
+    default: 9092
+  client_options:
+    description: Connection options like `security_protocol`, `sasl_mechanism`, `sasl_plain_username`, etc.
+    type: object
+    default: {}
+    additionalProperties:
+      type: string
