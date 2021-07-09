@@ -18,7 +18,7 @@ parameters:
   replication_factor:
     description: Replication factor of partitions, or -1 if replica_assignment is used.
     type: integer
-    default: 1
+    default: 2
     required: false
   replica_assignment:
     description: mapping from partition id to the assigned replica
@@ -44,5 +44,4 @@ parameters:
     description: Connection options like `security_protocol`, `sasl_mechanism`, `sasl_plain_username`, etc.
     type: object
     default: {}
-    additionalProperties:
-      type: string
+    additionalProperties: true
