@@ -1,6 +1,6 @@
 ---
-name: list_consumer_groups
-description: List consumer groups using the kafka api on a kafka broker server
+name: list_topic
+description: list a topics using the kafka api on a kafka broker server
 enabled: true
 runner_type: python-script
 entry_point: list_topic.py
