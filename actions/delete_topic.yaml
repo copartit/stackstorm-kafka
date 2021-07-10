@@ -24,5 +24,4 @@ parameters:
     description: Connection options like `security_protocol`, `sasl_mechanism`, `sasl_plain_username`, etc.
     type: object
     default: {}
-    additionalProperties:
-      type: string
+    additionalProperties: true
