@@ -1,6 +1,6 @@
 ---
 name: delete_topic
-description: Create a topic using the kafka api on a kafka broker server
+description: Delete a topic using the kafka api on a kafka broker server
 enabled: true
 runner_type: python-script
 entry_point: delete_topic.py
