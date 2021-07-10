@@ -3,7 +3,7 @@ name: list_consumer_groups
 description: List consumer groups using the kafka api on a kafka broker server
 enabled: true
 runner_type: python-script
-entry_point: list_consumer_groups.py
+entry_point: list_topic.py
 
 # doc strings come from the apache licensed confluent-kafka python package
 parameters:
