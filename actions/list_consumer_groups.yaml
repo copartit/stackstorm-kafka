@@ -18,5 +18,6 @@ parameters:
   client_options:
     description: Connection options like `security_protocol`, `sasl_mechanism`, `sasl_plain_username`, etc.
     type: object
+    required: true
     default: {}
     additionalProperties: true
