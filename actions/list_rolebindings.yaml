@@ -4,8 +4,6 @@ description: List role binding resoures  using the kafka MDS api on a kafka brok
 enabled: true
 runner_type: python-script
 entry_point: list_rolebindings.py
-
-# doc strings come from the apache licensed confluent-kafka python package
 parameters:
   kafka_broker:
     description: A kafka broker (server) to talk to
