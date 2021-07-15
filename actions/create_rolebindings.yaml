@@ -1,0 +1,43 @@
+---
+name: list_rolebindings
+description: List role binding resoures  using the kafka MDS api on a kafka broker server
+enabled: true
+runner_type: python-script
+entry_point: list_rolebindings.py
+
+# doc strings come from the apache licensed confluent-kafka python package
+parameters:
+  kafka_broker:
+    description: A kafka broker (server) to talk to
+    type: string
+    required: true
+  mds_port:
+    description: The port that the kafka MDS is listening on
+    type: integer
+    default: 8090
+  principal:
+    description: principal
+    type: string
+    required: true
+  role:
+    description: role
+    type: string
+    required: true
+  resource:
+    description: role
+    type: string
+    required:
+  pattern_type:
+    description: role
+    type: string
+    required: true
+
+  mds_username:
+    description: MDS username (LDAP)
+    type: string
+    required: true
+
+  mds_password:
+    description: MDS password (LDAP)
+    type: string
+    required: true
