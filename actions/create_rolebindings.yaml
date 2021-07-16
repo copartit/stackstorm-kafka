@@ -5,18 +5,10 @@ enabled: true
 runner_type: python-script
 entry_point: create_rolebindings.py
 
+# doc strings come from the apache licensed confluent-kafka python package
 parameters:
-  kafka_broker:
-    description: A kafka broker (server) to talk to
-    type: string
-    required: true
-  mds_port:
-    description: The port that the kafka MDS is listening on
-    type: integer
-    default: 8090
-    required: false
   principal:
-    description: principal
+    description: The topic to create
     type: string
     required: true
   role:
@@ -24,20 +16,27 @@ parameters:
     type: string
     required: true
   resource:
-    description: role
+    description: resource
     type: string
-    required:
+    required: true
   pattern_type:
-    description: role
+    description: mapping from partition id to the assigned replica
     type: string
     required: true
 
+  kafka_broker:
+    description: A kafka broker (server) to talk to
+    type: string
+    required: true
+  mds_port:
+    description: The port that the kafka broker is listening on
+    type: integer
+    default: 9092
   mds_username:
-    description: MDS username (LDAP)
+    description: LDAP username
     type: string
     required: true
-
   mds_password:
-    description: MDS password (LDAP)
+    description: LDAP password
     type: string
     required: true
