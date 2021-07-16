@@ -81,7 +81,7 @@ class MetaDataService:
 
 
 if __name__ == "__main__":
-    mds = MetaDataService('svc.cpkafkaqa', 'YPt4wvsMX$y@Q92u?Rv@eeE=', "c-kafka-qa4.copart.com")
+    mds = MetaDataService('xx', 'xx', "c-kafka-qa4.copart.com")
     # mds.authenticate()
     # print(mds.bearer_token)
     # print(mds.get_clusterid())
