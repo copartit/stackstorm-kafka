@@ -13,6 +13,7 @@ parameters:
     description: The port that the kafka MDS is listening on
     type: integer
     default: 8090
+    required: false
   principal:
     description: principal
     type: string
