@@ -8,7 +8,7 @@ entry_point: create_rolebindings.py
 # doc strings come from the apache licensed confluent-kafka python package
 parameters:
   principal:
-    description: The topic to create
+    description: principal name
     type: string
     required: true
   role:
@@ -20,7 +20,7 @@ parameters:
     type: string
     required: true
   pattern_type:
-    description: mapping from partition id to the assigned replica
+    description: type
     type: string
     required: true
 
@@ -29,7 +29,7 @@ parameters:
     type: string
     required: true
   mds_port:
-    description: The port that the kafka broker is listening on
+    description: The port that the kafka MDS  is listening on
     type: integer
     default: 9092
   mds_username:
